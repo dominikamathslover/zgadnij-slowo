@@ -1,8 +1,23 @@
 import Letter from "./Letter";
 import Key from "./Key";
 import Life from "./Life";
+import { useState } from "react";
+import data from "../assets/words.json";
+import { nanoid } from "nanoid";
 
 export default function Main() {
+  const [words] = useState(data);
+  const [secretWord] = useState(() => {
+    const randomNum = Math.floor(Math.random() * data["5"].length);
+    return words["5"]?.[randomNum]?.word;
+  });
+
+  function word() {
+    return secretWord
+      .split("")
+      .map((letter) => <Letter key={nanoid()} value={letter} />);
+  }
+
   function keyBoard() {
     const letters = [
       "A",
@@ -43,13 +58,7 @@ export default function Main() {
 
   return (
     <main>
-      <div className="word">
-        <Letter />
-        <Letter />
-        <Letter />
-        <Letter />
-        <Letter />
-      </div>
+      <div className="word">{word()}</div>
       <div className="keyboard">{keyBoard()}</div>
       <div className="lives">
         <Life />
@@ -58,7 +67,10 @@ export default function Main() {
         <Life />
         <Life />
       </div>
-      <section className="score"></section>
+      <section className="score">
+        <h2>Udało się!</h2>
+        {/* <p>{secretWord}</p> */}
+      </section>
     </main>
   );
 }

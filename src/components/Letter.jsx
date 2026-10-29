@@ -1,3 +1,3 @@
-export default function Letter() {
-  return <div className="letter"></div>;
+export default function Letter(props) {
+  return <div className="letter">{props.value}</div>;
 }
