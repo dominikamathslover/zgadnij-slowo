@@ -5,7 +5,7 @@ export default function Key(props) {
       onClick={() => props.onClick(props.letter)}
       style={{
         backgroundColor: props.isCorrect
-          ? "green"
+          ? "#e1306b8f"
           : props.isPressed && "rgb(201, 178, 178)",
       }}
     >

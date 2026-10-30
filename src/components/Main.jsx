@@ -17,7 +17,15 @@ export default function Main() {
   function word() {
     return secretWord
       .split("")
-      .map((letter) => <Letter key={nanoid()} value={letter} />);
+      .map((letter) => (
+        <Letter
+          key={nanoid()}
+          value={letter}
+          isCorrect={
+            selectedLetters.includes(letter) && secretWord.includes(letter)
+          }
+        />
+      ));
   }
 
   function keyBoard() {
