@@ -34,7 +34,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   margin: 0;
 }
 
@@ -62,6 +63,10 @@ h1 {
   font-family: var(--header-font);
   letter-spacing: 0.2em;
   margin-bottom: 1em;
+}
+
+h3 {
+  font-size: smaller;
 }
 
 /* =================================
@@ -130,5 +135,7 @@ h1 {
    win
 ================================= */
 
-.score {
+.secret-word {
+  font-family: var(--header-font);
+  font-size: 1.2em;
 }
