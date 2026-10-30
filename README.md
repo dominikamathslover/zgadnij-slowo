@@ -8,6 +8,7 @@
 - Oznaczanie poprawnie i błędnie wybranych liter.
 - Każda błędna litera odbiera jedno życie.
 - Komunikaty o wygranej lub przegranej.
+- Efekt konfetti wyświetlany po wygranej.
 
 ## Technologie
 - React
