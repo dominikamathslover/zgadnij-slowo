@@ -1,9 +1,10 @@
 import Letter from "./Letter";
 import Key from "./Key";
 import Life from "./Life";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "../assets/words.json";
 import { nanoid } from "nanoid";
+import confetti from "canvas-confetti";
 
 export default function Main() {
   const [gameOver, setGameOver] = useState(false);
@@ -111,6 +112,17 @@ export default function Main() {
       setWin(true);
     }
   }
+
+  useEffect(() => {
+    if (win)
+      confetti({
+        particleCount: 205,
+        particleSize: 2.6,
+        spread: 181,
+        startVelocity: 32,
+        origin: { x: 0.5, y: 0.6 },
+      });
+  }, [win]);
 
   return (
     <main>
