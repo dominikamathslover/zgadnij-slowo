@@ -6,10 +6,12 @@ import data from "../assets/words.json";
 import { nanoid } from "nanoid";
 
 export default function Main() {
+  const win = false;
   const [words] = useState(data);
+  const [selectedLetters, setSelectedLetters] = useState([]);
   const [secretWord] = useState(() => {
     const randomNum = Math.floor(Math.random() * data["5"].length);
-    return words["5"]?.[randomNum]?.word;
+    return words["5"]?.[randomNum]?.word.toUpperCase();
   });
 
   function word() {
@@ -53,7 +55,25 @@ export default function Main() {
       "Ź",
       "Ż",
     ];
-    return letters.map((letter) => <Key key={letter} letter={letter} />);
+    return letters.map((letter) => (
+      <Key
+        key={letter}
+        letter={letter}
+        onClick={pressedLetter}
+        isPressed={
+          selectedLetters.includes(letter) && !secretWord.includes(letter)
+        }
+        isCorrect={
+          selectedLetters.includes(letter) && secretWord.includes(letter)
+        }
+      />
+    ));
+  }
+
+  function pressedLetter(letter) {
+    setSelectedLetters((prev) =>
+      prev.includes(letter) ? prev : [...prev, letter],
+    );
   }
 
   return (
@@ -67,10 +87,7 @@ export default function Main() {
         <Life />
         <Life />
       </div>
-      <section className="score">
-        <h2>Udało się!</h2>
-        {/* <p>{secretWord}</p> */}
-      </section>
+      <section className="score">{win && <h2>Udało się!</h2>}</section>
     </main>
   );
 }
