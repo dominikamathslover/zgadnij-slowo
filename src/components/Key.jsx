@@ -8,6 +8,7 @@ export default function Key(props) {
           ? "#e1306b8f"
           : props.isPressed && "rgb(201, 178, 178)",
       }}
+      disabled={props.disabled}
     >
       {props.letter}
     </button>

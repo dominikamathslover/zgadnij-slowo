@@ -15,7 +15,7 @@ export default function Main() {
     const randomNum = Math.floor(Math.random() * data["5"].length);
     return words["7"]?.[randomNum]?.word.toUpperCase();
   });
-  const [lives, setLives] = useState(10);
+  const [lives, setLives] = useState(5);
 
   function word() {
     return secretWord
@@ -81,6 +81,7 @@ export default function Main() {
         isCorrect={
           selectedLetters.includes(letter) && secretWord.includes(letter)
         }
+        disabled={gameOver}
       />
     ));
   }
