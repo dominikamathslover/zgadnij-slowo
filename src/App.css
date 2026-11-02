@@ -13,6 +13,10 @@
   --purple: #833ab4;
   --orange: #fcaf45;
   --light-grey: rgb(224, 210, 210);
+  --pink-key: #e1306b8f;
+  --font-color-hover: #220436;
+  --color-clicked-btn: rgb(66, 61, 61);
+  --color-hover: rgb(201, 178, 178);
 
   --border-radius: 2em;
 
@@ -76,7 +80,7 @@ h3 {
 .letter {
   font-size: 2em;
   background-color: var(--light-grey);
-  border-bottom: 2px solid rgb(66, 61, 61);
+  border-bottom: 2px solid var(--color-clicked-btn);
   min-width: 1.5em;
   min-height: 1.5em;
 }
@@ -112,8 +116,8 @@ h3 {
 }
 
 .key-btn:hover {
-  background-color: rgb(201, 178, 178);
-  color: #220436;
+  background-color: var(--color-hover);
+  color: var(--font-color-hover);
 }
 
 /* =================================
@@ -137,6 +141,23 @@ h3 {
 .secret-word {
   font-family: var(--header-font);
   font-size: 1.2em;
+}
+
+.btn-next {
+  margin: 0.8em;
+  padding: 0.5em 1em;
+  background-color: var(--pink);
+  border: none;
+  border-radius: 1em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-family: var(--sans);
+  font-size: 1rem;
+  color: white;
+}
+
+.btn-next:hover {
+  background-color: #ef155ed7;
 }
 
 /* =================================
