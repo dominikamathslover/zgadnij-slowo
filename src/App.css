@@ -100,6 +100,12 @@ h3 {
   gap: 0.5em;
 }
 
+.keyboard .key-btn:disabled {
+  opacity: 0.3;
+  background-color: var(--color-hover);
+  cursor: default;
+}
+
 /* =================================
    keyboard
 ================================= */
@@ -113,6 +119,7 @@ h3 {
   font-family: "Courier New", Courier, monospace;
   font-weight: 600;
   border: none;
+  cursor: pointer;
 }
 
 .key-btn:hover {
@@ -154,6 +161,7 @@ h3 {
   font-family: var(--sans);
   font-size: 1rem;
   color: white;
+  cursor: pointer;
 }
 
 .btn-next:hover {

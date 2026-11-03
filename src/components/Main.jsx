@@ -94,7 +94,7 @@ export default function Main() {
         isCorrect={
           selectedLetters.includes(letter) && secretWord.includes(letter)
         }
-        disabled={gameOver}
+        disabled={gameOver || iloscZgadnietych === 3}
       />
     ));
   }
