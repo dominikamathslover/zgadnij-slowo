@@ -3,7 +3,6 @@ import Key from "./Key";
 import Life from "./Life";
 import { useState, useEffect } from "react";
 import data from "../assets/words.json";
-import { nanoid } from "nanoid";
 import confetti from "canvas-confetti";
 
 export default function Main() {
@@ -35,9 +34,9 @@ export default function Main() {
   function word() {
     return secretWord
       .split("")
-      .map((letter) => (
+      .map((letter, index) => (
         <Letter
-          key={nanoid()}
+          key={`${letter}-${index}`}
           value={letter}
           isCorrect={
             selectedLetters.includes(letter) && secretWord.includes(letter)
@@ -98,7 +97,7 @@ export default function Main() {
         }
         disabled={gameOver || iloscZgadnietych === 3}
         aria-disabled={selectedLetters.includes(letter)}
-        aria-label={`Letter ${letter}`}
+        aria-label={`Litera ${letter}`}
       />
     ));
   }
@@ -166,12 +165,16 @@ export default function Main() {
     <main>
       <div className="word">{word()}</div>
       <div className="sr-only" role="status" aria-live="polite">
-        <p>
-          {secretWord.includes(lastGuessedLetter)
-            ? `Dobrze! Litera ${lastGuessedLetter} znajduje się w haśle.`
-            : `Niestety, litery ${lastGuessedLetter} nie ma w haśle.`}
-          Pozostało Ci ${lives} niestraconych szans.
-        </p>
+        {lastGuessedLetter && (
+          <>
+            <p>
+              {secretWord.includes(lastGuessedLetter)
+                ? `Dobrze! Litera ${lastGuessedLetter} znajduje się w haśle.`
+                : `Niestety, litery ${lastGuessedLetter} nie ma w haśle.`}
+            </p>
+            <p>Pozostało Ci {lives} niestraconych szans.</p>
+          </>
+        )}
         <p>
           Aktualne słowo:{" "}
           {secretWord
@@ -183,12 +186,14 @@ export default function Main() {
         </p>
       </div>
 
-      <div className="keyboard">{keyBoard()}</div>
+      <div className="keyboard" role="group" aria-label="Klawiatura z literami">
+        {keyBoard()}
+      </div>
       <div className="lives">{remainLives()}</div>
-      <section aria-live="polite" role="status" className="score">
+      <section aria-labelledby="game-result" role="status" className="score">
         {win && (
           <>
-            <h2>Udało się!</h2>
+            <h2 id="game-result">Udało się!</h2>
             {iloscZgadnietych !== 3 && (
               <>
                 <h3>Ilość zgadniętych haseł: {iloscZgadnietych}</h3>
