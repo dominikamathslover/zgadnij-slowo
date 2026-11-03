@@ -152,5 +152,54 @@
     { "id": 146, "word": "żądanie" },
     { "id": 147, "word": "wątroba" },
     { "id": 148, "word": "różnica" }
+  ],
+
+  "10": [
+    { "id": 149, "word": "abonamenty" },
+    { "id": 150, "word": "autostrada" },
+    { "id": 151, "word": "biblioteka" },
+    { "id": 152, "word": "czekoladka" },
+    { "id": 153, "word": "fotografia" },
+    { "id": 154, "word": "informacja" },
+    { "id": 155, "word": "krajobrazy" },
+    { "id": 156, "word": "opakowanie" },
+    { "id": 157, "word": "telewizory" },
+    { "id": 158, "word": "koszykówka" },
+    { "id": 159, "word": "przyjaciel" },
+    { "id": 160, "word": "matematyka" },
+    { "id": 161, "word": "malowniczy" },
+    { "id": 162, "word": "samolotowy" },
+    { "id": 163, "word": "narodowość" }
+  ],
+
+  "9": [
+    { "id": 164, "word": "malarstwo" },
+    { "id": 165, "word": "kalendarz" },
+    { "id": 166, "word": "zwyczajny" },
+    { "id": 167, "word": "cukiernia" },
+    { "id": 168, "word": "piekarnia" },
+    { "id": 169, "word": "zagadkowy" },
+    { "id": 170, "word": "deszczowy" },
+    { "id": 171, "word": "słoneczny" },
+    { "id": 172, "word": "pamiętnik" },
+    { "id": 173, "word": "samotność" }
+  ],
+  "8": [
+    { "id": 177, "word": "komputer" },
+    { "id": 178, "word": "samochód" },
+    { "id": 179, "word": "przyroda" },
+    { "id": 180, "word": "przygoda" },
+    { "id": 181, "word": "królowie" },
+    { "id": 182, "word": "kamienny" },
+    { "id": 183, "word": "kolorowy" },
+    { "id": 184, "word": "jesienny" },
+    { "id": 185, "word": "pływanie" },
+    { "id": 186, "word": "wiosenny" },
+    { "id": 187, "word": "pomidory" },
+    { "id": 188, "word": "kucharka" },
+    { "id": 189, "word": "poziomka" },
+    { "id": 190, "word": "przyjazd" },
+    { "id": 191, "word": "lotnisko" },
+    { "id": 192, "word": "podróżny" }
   ]
 }
