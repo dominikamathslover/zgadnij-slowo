@@ -66,12 +66,12 @@
     { "id": 62, "word": "plecak" },
     { "id": 63, "word": "kurtka" },
     { "id": 64, "word": "czapka" },
-    { "id": 65, "word": "rowery" },
+    { "id": 65, "word": "kochać" },
     { "id": 66, "word": "komoda" },
     { "id": 67, "word": "lustro" },
-    { "id": 68, "word": "sufity" },
-    { "id": 69, "word": "ściany" },
-    { "id": 70, "word": "drzewa" },
+    { "id": 68, "word": "miłość" },
+    { "id": 69, "word": "deszcz" },
+    { "id": 70, "word": "drzewo" },
     { "id": 71, "word": "wiosna" },
     { "id": 72, "word": "jesień" },
     { "id": 73, "word": "rodzic" },
@@ -85,7 +85,7 @@
     { "id": 81, "word": "pająki" },
     { "id": 82, "word": "myszka" },
     { "id": 83, "word": "kropla" },
-    { "id": 84, "word": "bracia" },
+    { "id": 84, "word": "randka" },
     { "id": 85, "word": "kamień" },
     { "id": 86, "word": "młotek" },
     { "id": 87, "word": "kłopot" },
@@ -114,7 +114,7 @@
     { "id": 108, "word": "ogródek" },
     { "id": 109, "word": "gwiazdy" },
     { "id": 110, "word": "zwierzę" },
-    { "id": 111, "word": "malarka" },
+
     { "id": 112, "word": "malarze" },
     { "id": 113, "word": "kwiatki" },
     { "id": 114, "word": "pudełko" },
@@ -155,7 +155,7 @@
   ],
 
   "10": [
-    { "id": 149, "word": "abonamenty" },
+    { "id": 149, "word": "namiętność" },
     { "id": 150, "word": "autostrada" },
     { "id": 151, "word": "biblioteka" },
     { "id": 152, "word": "czekoladka" },
@@ -179,9 +179,9 @@
     { "id": 167, "word": "cukiernia" },
     { "id": 168, "word": "piekarnia" },
     { "id": 169, "word": "zagadkowy" },
-    { "id": 170, "word": "deszczowy" },
+    { "id": 170, "word": "nietoperz" },
     { "id": 171, "word": "słoneczny" },
-    { "id": 172, "word": "pamiętnik" },
+    { "id": 172, "word": "szczęście" },
     { "id": 173, "word": "samotność" }
   ],
   "8": [
@@ -189,8 +189,8 @@
     { "id": 178, "word": "samochód" },
     { "id": 179, "word": "przyroda" },
     { "id": 180, "word": "przygoda" },
-    { "id": 181, "word": "królowie" },
-    { "id": 182, "word": "kamienny" },
+    { "id": 181, "word": "wierność" },
+    { "id": 182, "word": "zaufanie" },
     { "id": 183, "word": "kolorowy" },
     { "id": 184, "word": "jesienny" },
     { "id": 185, "word": "pływanie" },
@@ -200,6 +200,7 @@
     { "id": 189, "word": "poziomka" },
     { "id": 190, "word": "przyjazd" },
     { "id": 191, "word": "lotnisko" },
-    { "id": 192, "word": "podróżny" }
+    { "id": 192, "word": "podróżny" },
+    { "id": 192, "word": "tęsknota" }
   ]
 }
