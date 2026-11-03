@@ -11,12 +11,12 @@ export default function Main() {
   const [words] = useState(data);
   const [selectedLetters, setSelectedLetters] = useState([]);
   const [secretWord, setSecredWord] = useState(() => {
-    const randomNum = Math.floor(Math.random() * data["7"].length);
-    return words["7"]?.[randomNum]?.word.toUpperCase();
+    const randomNum = Math.floor(Math.random() * data["10"].length);
+    return words["10"]?.[randomNum]?.word.toUpperCase();
   });
   const [lives, setLives] = useState(15);
   const [iloscZgadnietych, setIloscZgadnietych] = useState(0);
-  const [dlugoscHasla, setDlugoscHasla] = useState(7);
+  const [dlugoscHasla, setDlugoscHasla] = useState(10);
 
   const lastGuessedLetter = selectedLetters[selectedLetters.length - 1];
 
@@ -32,6 +32,8 @@ export default function Main() {
   }
 
   function word() {
+    const longSecretWord = secretWord.length > 7;
+
     return secretWord
       .split("")
       .map((letter, index) => (
@@ -41,6 +43,7 @@ export default function Main() {
           isCorrect={
             selectedLetters.includes(letter) && secretWord.includes(letter)
           }
+          className={longSecretWord ? "longSecretWord" : ""}
         />
       ));
   }
@@ -95,7 +98,7 @@ export default function Main() {
         isCorrect={
           selectedLetters.includes(letter) && secretWord.includes(letter)
         }
-        disabled={gameOver || iloscZgadnietych === 3}
+        disabled={gameOver || iloscZgadnietych === 5}
         aria-disabled={selectedLetters.includes(letter)}
         aria-label={`Litera ${letter}`}
       />
@@ -194,7 +197,7 @@ export default function Main() {
         {win && (
           <>
             <h2 id="game-result">Udało się!</h2>
-            {iloscZgadnietych !== 3 && (
+            {iloscZgadnietych !== 5 && (
               <>
                 <h3>Ilość zgadniętych haseł: {iloscZgadnietych}</h3>
                 <button className="btn-next" onClick={nastepneHaslo}>
@@ -202,7 +205,7 @@ export default function Main() {
                 </button>
               </>
             )}
-            {iloscZgadnietych === 3 && (
+            {iloscZgadnietych === 5 && (
               <>
                 <h3>Wygrałeś rozgrywkę</h3>
                 <button className="btn-next" onClick={nowaGra}>
@@ -212,7 +215,7 @@ export default function Main() {
             )}
           </>
         )}
-        {gameOver && iloscZgadnietych !== 3 && (
+        {gameOver && iloscZgadnietych !== 5 && (
           <>
             {" "}
             <h3>
