@@ -19,6 +19,8 @@ export default function Main() {
   const [iloscZgadnietych, setIloscZgadnietych] = useState(0);
   const [dlugoscHasla, setDlugoscHasla] = useState(7);
 
+  const lastGuessedLetter = selectedLetters[selectedLetters.length - 1];
+
   function nextSecretWord() {
     const length = dlugoscHasla - 1;
     setDlugoscHasla(length);
@@ -95,6 +97,8 @@ export default function Main() {
           selectedLetters.includes(letter) && secretWord.includes(letter)
         }
         disabled={gameOver || iloscZgadnietych === 3}
+        aria-disabled={selectedLetters.includes(letter)}
+        aria-label={`Letter ${letter}`}
       />
     ));
   }
@@ -161,9 +165,27 @@ export default function Main() {
   return (
     <main>
       <div className="word">{word()}</div>
+      <div className="sr-only" role="status" aria-live="polite">
+        <p>
+          {secretWord.includes(lastGuessedLetter)
+            ? `Dobrze! Litera ${lastGuessedLetter} znajduje się w haśle.`
+            : `Niestety, litery ${lastGuessedLetter} nie ma w haśle.`}
+          Pozostało Ci ${lives} niestraconych szans.
+        </p>
+        <p>
+          Aktualne słowo:{" "}
+          {secretWord
+            .split("")
+            .map((letter) =>
+              selectedLetters.includes(letter) ? letter : "puste pole",
+            )
+            .join(", ")}
+        </p>
+      </div>
+
       <div className="keyboard">{keyBoard()}</div>
       <div className="lives">{remainLives()}</div>
-      <section className="score">
+      <section aria-live="polite" role="status" className="score">
         {win && (
           <>
             <h2>Udało się!</h2>
