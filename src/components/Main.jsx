@@ -157,11 +157,11 @@ export default function Main() {
     setGameOver(false);
     setWin(false);
     setLives(15);
-    setDlugoscHasla(7);
+    setDlugoscHasla(10);
     setSelectedLetters([]);
     setIloscZgadnietych(0);
-    const randomNum = Math.floor(Math.random() * data["7"].length);
-    setSecredWord(words["7"]?.[randomNum]?.word.toUpperCase());
+    const randomNum = Math.floor(Math.random() * data["10"].length);
+    setSecredWord(words["10"]?.[randomNum]?.word.toUpperCase());
   }
 
   return (
